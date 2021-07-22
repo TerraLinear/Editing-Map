@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="app.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" integrity="undefined" crossorigin="anonymous">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width" />
+    <title>ESRI JS</title>
+
+    <style>
+      
+
+    </style>
+    <script src="function.js" type="module"></script>
+    <script src="mapInfo.js"></script>
+    <!-- <script src="app.js"></script> -->
+    <script>
+    //dbConnection();
+    </script>
+    <link rel="stylesheet" href="https://js.arcgis.com/4.18/esri/themes/light/main.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://js.arcgis.com/4.18/"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script> -->
+    
+    <script>
+    //getFile();
+    //addUI();
+    //login();
+    </script>
+
+  </head>
+  <body>
+  <!--Side Bar configuration -->
+    <div id="viewDiv">
+      <div class="area"></div>
+        <nav class="main-menu">
+          <ul>
+            <li>
+              <a href="https://terralinear.com">
+              <i class="fa fa-home fa-2x"></i>
+              <span class="nav-text">Dashboard</span>
+              </a>          
+            </li>
+            <li class="has-subnav">
+              <a href="#">
+              <i class="fa fa-cog fa-2x"></i>
+              <span class="nav-text">Settings</span>
+              </a>
+            </li>
+            <div class="dropdown">
+              <li class="has-subnav dropbtn">
+                <a href="#">
+                <i class="fa fa-cubes fa-2x" aria-hidden="true"></i>
+                <span class="nav-text">Indoor Tables</span>
+                <div class="dropdown-content">
+                  <a id="unit">Unit</a>
+                  <a id="opening">Opening</a>
+                </div>
+                </a>
+              </li>
+            </div>
+          </ul>
+          <ul id="logout">
+            <li>
+              <a href="index.html">
+              <i class="fa fa-power-off fa-2x"></i>
+              <span class="nav-text">Logout</span>
+              </a>
+            </li>
+          </ul>
+        </nav>
+
+        <!-- Forms/Tables configuration -->
+    <div id="formDiv" class="fixed-bottom" style="background-color: #eee; bottom: 8px; right:16px; width:300px;">
+      <form class="row g-3" id="form1" style="display: none;">
+        <div id="unit" class="form-group">
+          <label for="fname" class="col-sm-1 col-form-label">Unit Name:</label><br>
+          <div class="col-sm-10"><input type="text" id="unitname" name="unitName" placeholder="Bathroom" required><br></div>
+        </div>
+        <div class="form-group">
+          <label for="lname" class="col-sm-1 col-form-label">Unit ID:</label><br>
+          <div class="col-sm-10"><input type="text" id="unitid" name="unitName" placeholder="A1002" required><br><br></div>
+        </div>
+        <div class="form-group">
+          <input class="btn btn-primary col-sm-3" id ="submit" type="submit" value="Submit" name="unitName" onclick="submitInfo();resetFormunit()">
+        </div>
+      </form>
+            
+      <form class="row g-2" id="form2" style="display: none;">
+        <div id="opening" class="form-group"> 
+          <label for="fname" class="col-sm-2 col-form-label">Opening Name:</label><br>
+          <div><input type="text" id="openingname" name="openingName" placeholder="Bathroom" required><br></div>
+        </div>
+        <div class="form-group">
+          <label for="lname" class="col-sm-2 col-form-label">Opening ID:</label><br>
+          <div class="col-sm-10"><input type="text" id="openingid" name="openingName" placeholder="A1002" required><br><br></div>
+        </div>
+        <div class="form-group">
+          <input class="btn btn-primary col-sm-3" id ="submit" type="submit" value="Submit" name="openingName" onclick="submitInfo();resetFormopening()">
+        </div>
+      </form>
+    </div>
+  </div>
+  <script>
+    submitInfo();
+    resetFormunit();
+    resetFormopening();
+    logOut();
+  </script>
+  </body>
+</html>
